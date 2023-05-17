@@ -2,6 +2,12 @@ package easy;
 
 import java.util.Arrays;
 
+/**
+ * 题目链接:
+ * https://leetcode.cn/problems/remove-duplicates-from-sorted-array/description/
+ * 
+ * 解题思路: 双指针
+ */
 public class RemoveDuplicatesFromSortedArray26 {
     public static void main(String[] args) {
         Solution solution = new Solution();
