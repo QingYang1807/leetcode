@@ -20,7 +20,7 @@ public class MajorityElement169 {
 
         Solution2 solution2 = new Solution2();
         int[] nums2 = { 2, 2, 1, 1, 1, 2, 2 };
-        int result2 = solution1.majorityElement(nums2);
+        int result2 = solution2.majorityElement(nums2);
         System.out.println(result2);
 
         Solution3 solution3 = new Solution3();
