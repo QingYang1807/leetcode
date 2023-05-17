@@ -36,6 +36,10 @@ package easy;
  * Time Complexity: O(n), Space Complexity: O(n)
  */
 public class EventConflictChecker2446 {
+    public boolean haveConflict(String[] event1, String[] event2) {
+        return !(event1[1].compareTo(event2[0]) < 0 || event2[1].compareTo(event1[0]) < 0);
+    }
+
     public static void main(String[] args) {
         String[] event3 = new String[] { "01:15", "02:00" };
         String[] event4 = new String[] { "02:00", "03:00" };
@@ -55,9 +59,5 @@ public class EventConflictChecker2446 {
         EventConflictChecker2446 instance = new EventConflictChecker2446();
         boolean result = instance.haveConflict(event1, event2);
         System.out.println(result);
-    }
-
-    public boolean haveConflict(String[] event1, String[] event2) {
-        return !(event1[1].compareTo(event2[0]) < 0 || event2[1].compareTo(event1[0]) < 0);
     }
 }
