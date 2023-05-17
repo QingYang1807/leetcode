@@ -1,3 +1,4 @@
+package easy;
 
 /**
  * LeetCode Problem:
@@ -34,7 +35,7 @@
  * 
  * Time Complexity: O(n), Space Complexity: O(n)
  */
-public class LC_2446_DetermineIfTwoEventsHaveConflict {
+public class EventConflictChecker2446 {
     public static void main(String[] args) {
         String[] event3 = new String[] { "01:15", "02:00" };
         String[] event4 = new String[] { "02:00", "03:00" };
@@ -51,7 +52,7 @@ public class LC_2446_DetermineIfTwoEventsHaveConflict {
         String[] event1 = new String[] { "10:13", "13:02" };
         String[] event2 = new String[] { "13:17", "21:38" };
 
-        LC_2446_DetermineIfTwoEventsHaveConflict instance = new LC_2446_DetermineIfTwoEventsHaveConflict();
+        EventConflictChecker2446 instance = new EventConflictChecker2446();
         boolean result = instance.haveConflict(event1, event2);
         System.out.println(result);
     }
