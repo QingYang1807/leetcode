@@ -10,21 +10,17 @@ import java.util.Arrays;
  */
 public class RemoveDuplicatesFromSortedArray26 {
     public static void main(String[] args) {
-        Solution solution = new Solution();
-
         int[] nums = { 1, 1, 2 };
-        int result = solution.removeDuplicates(nums);
+        int result = removeDuplicates(nums);
         System.out.println(result + ", nums = " +
                 Arrays.toString(Arrays.copyOfRange(nums, 0, result)));
 
         int[] nums2 = { 0, 0, 1, 1, 1, 2, 2, 3, 3, 4 };
-        int result2 = solution.removeDuplicates(nums2);
+        int result2 = removeDuplicates(nums2);
         System.out.println(result2 + ", nums = " + Arrays.toString(Arrays.copyOfRange(nums2, 0, result2)));
     }
-}
 
-class Solution {
-    public int removeDuplicates(int[] nums) {
+    public static  int removeDuplicates(int[] nums) {
         int n = nums.length; // 数组的长度
         if (n == 0) {
             return 0; // 如果数组为空，则返回0

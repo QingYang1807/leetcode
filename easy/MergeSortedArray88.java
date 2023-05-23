@@ -15,8 +15,7 @@ public class MergeSortedArray88 {
         int[] nums2 = { 2, 5, 6 };
         int n = 3;
 
-        Solution solution = new Solution();
-        solution.merge(nums1, m, nums2, n);
+        merge1(nums1, m, nums2, n);
         System.out.println(Arrays.toString(nums1));
 
         int[] nums3 = { 1, 2, 3, 0, 0, 0 };
@@ -24,25 +23,20 @@ public class MergeSortedArray88 {
         int[] nums4 = { 2, 5, 6 };
         int n2 = 3;
 
-        Solution2 solution2 = new Solution2();
-        solution2.merge(nums3, m2, nums4, n2);
+        merge2(nums3, m2, nums4, n2);
         System.out.println(Arrays.toString(nums3));
     }
-}
 
-class Solution {
     // 直接合并后排序
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
+    public static void merge1(int[] nums1, int m, int[] nums2, int n) {
         for (int i = 0; i != n; ++i) { // 遍历nums2数组的每个元素
             nums1[m + i] = nums2[i]; // 将nums2的元素追加到nums1的末尾
         }
         Arrays.sort(nums1); // 对合并后的数组进行排序
     }
-}
 
-class Solution2 {
     // 双指针
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
+    public static void merge2(int[] nums1, int m, int[] nums2, int n) {
         int p1 = 0, p2 = 0; // 双指针，分别指向nums1和nums2数组的起始位置
         int[] sorted = new int[m + n]; // 创建一个新的数组来存储合并后的结果
         int cur; // 当前要合并的元素

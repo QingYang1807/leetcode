@@ -10,18 +10,13 @@ import java.util.Arrays;
 public class RemoveElement27 {
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
-
         int[] nums = { 3, 2, 2, 3 };
-        int result = solution.removeElement(nums, 3);
+        int result = removeElement(nums, 3);
 
         System.out.println(result + ", nums = " + Arrays.toString(Arrays.copyOfRange(nums, 0, result)));
     }
 
-}
-
-class Solution {
-    public int removeElement(int[] nums, int val) {
+    public static int removeElement(int[] nums, int val) {
         int n = nums.length; // 数组的长度
         int left = 0; // 左指针，指向当前有效元素的位置
         for (int right = 0; right < n; right++) { // 右指针，遍历数组中的每个元素

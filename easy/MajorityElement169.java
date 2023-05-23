@@ -8,47 +8,38 @@ import java.util.Random;
 /**
  * 题目链接:
  * https://leetcode.cn/problems/majority-element/?envType=study-plan-v2&id=top-interview-150
- * 
+ * <p>
  * 解题思路: 哈希表 | 排序 | 随机化 | 分治 | Boyer-Moore 投票算法 | 其他
  */
 public class MajorityElement169 {
     public static void main(String[] args) {
-        Solution1 solution1 = new Solution1();
-        int[] nums1 = { 2, 2, 1, 1, 1, 2, 2 };
-        int result1 = solution1.majorityElement(nums1);
+        int[] nums1 = {2, 2, 1, 1, 1, 2, 2};
+        int result1 = majorityElement1(nums1);
         System.out.println(result1);
 
-        Solution2 solution2 = new Solution2();
-        int[] nums2 = { 2, 2, 1, 1, 1, 2, 2 };
-        int result2 = solution2.majorityElement(nums2);
+        int[] nums2 = {2, 2, 1, 1, 1, 2, 2};
+        int result2 = majorityElement2(nums2);
         System.out.println(result2);
 
-        Solution3 solution3 = new Solution3();
-        int[] nums3 = { 2, 2, 1, 1, 1, 2, 2 };
-        int result3 = solution3.majorityElement(nums3);
+        int[] nums3 = {2, 2, 1, 1, 1, 2, 2};
+        int result3 = majorityElement3(nums3);
         System.out.println(result3);
 
-        Solution4 solution4 = new Solution4();
-        int[] nums4 = { 2, 2, 1, 1, 1, 2, 2 };
-        int result4 = solution4.majorityElement(nums4);
+        int[] nums4 = {2, 2, 1, 1, 1, 2, 2};
+        int result4 = majorityElement4(nums4);
         System.out.println(result4);
 
-        Solution5 solution5 = new Solution5();
-        int[] nums5 = { 2, 2, 1, 1, 1, 2, 2 };
-        int result5 = solution5.majorityElement(nums5);
+        int[] nums5 = {2, 2, 1, 1, 1, 2, 2};
+        int result5 = majorityElement5(nums5);
         System.out.println(result5);
 
-        Solution2 solution6 = new Solution2();
-        int[] nums6 = { 2, 2, 1, 1, 1, 2, 2 };
-        int result6 = solution6.majorityElement(nums6);
+        int[] nums6 = {2, 2, 1, 1, 1, 2, 2};
+        int result6 = majorityElement6(nums6);
         System.out.println(result6);
     }
-}
 
-// 哈希表
-class Solution1 {
     // 哈希表方法
-    private Map<Integer, Integer> countNums(int[] nums) {
+    private static Map<Integer, Integer> countNums(int[] nums) {
         // 创建一个哈希表来记录每个数字出现的次数
         Map<Integer, Integer> counts = new HashMap<Integer, Integer>();
         for (int num : nums) {
@@ -63,7 +54,7 @@ class Solution1 {
         return counts;
     }
 
-    public int majorityElement(int[] nums) {
+    public static int majorityElement1(int[] nums) {
         // 调用countNums方法获得数字计数的哈希表
         Map<Integer, Integer> counts = countNums(nums);
 
@@ -79,24 +70,21 @@ class Solution1 {
         // 返回出现次数最多的数字
         return majorityEntry.getKey();
     }
-}
 
-// 排序
-class Solution2 {
-    public int majorityElement(int[] nums) {
+
+    // 排序
+    public static int majorityElement2(int[] nums) {
         Arrays.sort(nums);
         return nums[nums.length / 2];
     }
-}
 
-// 随机化
-class Solution3 {
-    private int randRange(Random rand, int min, int max) {
+    // 随机化
+    private static int randRange(Random rand, int min, int max) {
         // 生成[min, max)范围内的随机数
         return rand.nextInt(max - min) + min;
     }
 
-    private int countOccurrences(int[] nums, int num) {
+    private static int countOccurrences(int[] nums, int num) {
         // 统计数组中数字num的出现次数
         int count = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -107,7 +95,7 @@ class Solution3 {
         return count;
     }
 
-    public int majorityElement(int[] nums) {
+    public static int majorityElement3(int[] nums) {
         Random rand = new Random();
 
         int majorityCount = nums.length / 2;
@@ -122,11 +110,9 @@ class Solution3 {
             }
         }
     }
-}
 
-// 分治
-class Solution4 {
-    private int countInRange(int[] nums, int num, int lo, int hi) {
+    // 分治
+    private static int countInRange(int[] nums, int num, int lo, int hi) {
         // 统计数组nums在[lo, hi]范围内数字num的出现次数
         int count = 0;
         for (int i = lo; i <= hi; i++) {
@@ -137,7 +123,7 @@ class Solution4 {
         return count;
     }
 
-    private int majorityElementRec(int[] nums, int lo, int hi) {
+    private static int majorityElementRec(int[] nums, int lo, int hi) {
         // 递归函数，用于在nums数组的[lo, hi]范围内查找主要元素
 
         // 基本情况：当数组只有一个元素时，该元素即为主要元素
@@ -161,16 +147,13 @@ class Solution4 {
         return leftCount > rightCount ? left : right;
     }
 
-    public int majorityElement(int[] nums) {
+    public static int majorityElement4(int[] nums) {
         // 外部接口函数，调用递归函数在整个数组范围内查找主要元素
         return majorityElementRec(nums, 0, nums.length - 1);
     }
 
-}
-
-// Boyer-Moore 投票算法
-class Solution5 {
-    public int majorityElement(int[] nums) {
+    // Boyer-Moore 投票算法
+    public static int majorityElement5(int[] nums) {
         int count = 0; // 计数器，用于记录当前数字的出现次数
         Integer candidate = null; // 当前的候选元素
 
@@ -185,11 +168,9 @@ class Solution5 {
 
         return candidate; // 返回候选元素，即出现次数最多的元素
     }
-}
 
-// 其他
-class Solution6 {
-    public int majorityElement(int[] nums) {
+    // 其他
+    public static int majorityElement6(int[] nums) {
         int count = 0; // 初始化计数器为 0
         Integer candidate = null; // 初始化候选元素为空
 
