@@ -5,8 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiFunction;
 
-import enjoy_the_interview_100_questions.math.lc1134.TwoParamFunction;
-
 /**
  * 题目名称：找出隐藏数组中出现次数最多的元素
  * 题目链接：https://leetcode.cn/problems/guess-the-majority-in-a-hidden-array/
