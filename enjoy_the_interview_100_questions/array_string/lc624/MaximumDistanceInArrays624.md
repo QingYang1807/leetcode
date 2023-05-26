@@ -54,21 +54,23 @@ public class Solution {
 
 因此我们找到了可以方法一中可以优化的地方。我们顺序扫描这 `m` 个数组，当扫描到第 `i` 个数组时，我们计算出 `m[i]` 中最小的元素和前 `i - 1` 个数组中最大的元素 `max_val` 的差的绝对值，以及 `m[i]` 中最大的元素和前 `i - 1` 个数组中最小的元素 `min_val` 的差的绝对值。在这之后，我们更新 `min_val` 和 `max_val`，使其变为前 `i` 个数组中最小和最大的元素。
 
-![img](D:\picture\markdown\MaximumDistanceInArrays624\624_Maximum_DistanceSlide1.png)
+![](D:\picture\markdown\MaximumDistanceInArrays624\202305262250237.png)
 
-![img](D:\picture\markdown\MaximumDistanceInArrays624\624_Maximum_DistanceSlide2.png)
+![](D:\picture\markdown\MaximumDistanceInArrays624\202305262250098-168511262378221.png)
 
-![img](D:\picture\markdown\MaximumDistanceInArrays624\624_Maximum_DistanceSlide3.png)
 
-![img](D:\picture\markdown\MaximumDistanceInArrays624\624_Maximum_DistanceSlide4.png)
 
-![img](D:\picture\markdown\MaximumDistanceInArrays624\624_Maximum_DistanceSlide5.png)
+![](D:\picture\markdown\MaximumDistanceInArrays624\202305262250131.png)
 
-![img](D:\picture\markdown\MaximumDistanceInArrays624\624_Maximum_DistanceSlide6.png)
+![](D:\picture\markdown\MaximumDistanceInArrays624\202305262250160.png)
 
-![img](D:\picture\markdown\MaximumDistanceInArrays624\624_Maximum_DistanceSlide7.png)
+![](D:\picture\markdown\MaximumDistanceInArrays624\202305262250953.png)
 
-![img](D:\picture\markdown\MaximumDistanceInArrays624\624_Maximum_DistanceSlide8.png)
+![](D:\picture\markdown\MaximumDistanceInArrays624\202305262251187.png)
+
+![](D:\picture\markdown\MaximumDistanceInArrays624\202305262251866.png)
+
+![](D:\picture\markdown\MaximumDistanceInArrays624\202305262251812.png)
 
 
 
